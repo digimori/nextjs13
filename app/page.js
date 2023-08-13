@@ -1,9 +1,27 @@
-import Image from 'next/image';
+// We can define METAdata in two ways:
+// Static :
 
-export default function Home() {
+/*
+export const metadata = {
+  title: 'Home',
+}
+
+export default function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>Yellow!</div>
-    </main>
+    <h1>Exporting page with Static Metadata</h1>
   )
 }
+// OR Dynamic:
+
+export async function generateMetadata({ params, searchParams }) {
+  const product = await getProduct(params.id);
+  return { title: product.title };
+}
+
+export default function Page() {
+  return (
+    <h1>Exporting page with Static Metadata</h1>
+  )
+}
+
+*/

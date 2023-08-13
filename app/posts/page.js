@@ -7,3 +7,6 @@ const page = () => {
 }
 
 export default page
+
+
+// We can define METAdata in two ways: Static/Dynamic
