@@ -1,5 +1,6 @@
 import React from 'react';
 import { metadata } from './layout';
+import Feed from '@components/Feed';
 
 const Home = ({ metadata, description }) => {
   return (
@@ -13,7 +14,7 @@ const Home = ({ metadata, description }) => {
         Eum, id voluptatibus! Vel quisquam sed, ex incidunt ipsam aliquid commodi ipsa, 
         aspernatur deserunt facere veniam asperiores quas, deleniti quibusdam quo molestias.</p>
 
-        {/* Feed goes here */}
+        <Feed />
     </section>
   )
 }

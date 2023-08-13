@@ -1,5 +1,9 @@
 import '@styles/globals.css';
 
+import Navbar from '@components/Navbar';
+import Provider from '@components/Provider';
+
+
 export const metadata = {
     title: 'Promptodo',
     description: 'Discover & Share AI Prompts and Ideas'
@@ -14,6 +18,7 @@ const Rootlayout = ({ children }) => {
             </div>
 
             <main className='app'>
+                <Navbar />
                 {children}
             </main>
         </body>
