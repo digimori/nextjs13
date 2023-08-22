@@ -24,7 +24,7 @@ const [posts, setPosts] = useState([])
       }, [])
 
     const handleEdit = () => {
-
+        
     }
     const handleDelete = async () => {
 

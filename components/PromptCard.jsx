@@ -5,6 +5,9 @@ import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+  const {data: session} = useSession();
+  const pathName = usePathname();
+  const router = useRouter();
 const [copied, setCopied] = useState('') // This is the state change for whether or not the prompt has been copied
 const handleCopy = () => {
   setCopied(post.prompt);
@@ -58,6 +61,19 @@ const handleCopy = () => {
     >
       #{post.tag}
     </p>
+    {/* This is for checking if the user is logged in and the correct user before allowing them to edit/Delete the post */}
+    {session?.user.id === post.creator._id && pathName === '/profile' && (
+      <div>
+        <p className='font-inter text-sm green_gradient cursor-pointer'
+           onClick={handleEdit}>
+        Edit
+        </p>
+        <p className='font-inter text-sm orange_gradient cursor-pointer'
+           onClick={handleDelete}>
+        Delete
+        </p>
+      </div>
+    )}
     </div>
   )
 }
